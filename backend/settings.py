@@ -28,8 +28,7 @@ SECRET_KEY = 'django-insecure-$#c8ht$d*l_90+bbud!-5bvpdmm56f_c!ya1#@ll@=o^l)i5$q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['https://gelaldeneme.netlify.app/','127.0.0.1:8000']
 
 # Application definition
 
