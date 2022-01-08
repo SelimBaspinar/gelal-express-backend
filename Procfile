@@ -1,3 +1,4 @@
 release: python manage.py migrate
 web: gunicorn backend.wsgi --log-file -
-daphne -b 0.0.0.0 -p $PORT mysite.asgi:application
+web: daphne backend.asgi:application --port  $PORT -bind 0.0.0.0 -p
+chatworker: python manage.py runworker --settings=backend.settings
