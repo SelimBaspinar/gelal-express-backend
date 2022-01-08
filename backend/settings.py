@@ -133,9 +133,7 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ORIGIN_WHITELIST = [
-     'https://gelaldeneme.netlify.app/'
-]
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 django_heroku.settings(locals())
 
