@@ -18,7 +18,7 @@ class User(models.Model):
     Gender = models.CharField(max_length=120)
     Birthday = models.DateField()
     Role = models.ForeignKey(Role,related_name="roles",on_delete=models.CASCADE)
-    Phone = models.IntegerField()
+    Phone = models.CharField(max_length=120)
     Email = models.CharField(max_length=120)
     Password = models.CharField(max_length=500)
 
