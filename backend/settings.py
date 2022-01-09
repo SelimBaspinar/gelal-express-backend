@@ -135,11 +135,12 @@ USE_TZ = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ORIGIN_WHITELIST = ["https://gelaldeneme.netlify.app"
+CORS_ORIGIN_WHITELIST = ["https://gelaldeneme.netlify.app",'https://127.0.0.1'
 ]
 django_heroku.settings(locals())
 
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE='storages.backends.s3boto3.S3Boto3Storage'
 AWS_ACCESS_KEY_ID = 'AKIAZR2EILJOSFBIR6UK'
