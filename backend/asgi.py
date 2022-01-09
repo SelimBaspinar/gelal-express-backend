@@ -2,7 +2,7 @@ import os
 
 from channels.auth import AuthMiddlewareStack
 from channels.routing import ProtocolTypeRouter, URLRouter
-from django.conf.urls import url
+from django.urls import re_path
 from django.core.asgi import get_asgi_application
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
@@ -19,7 +19,7 @@ application = ProtocolTypeRouter({
     # WebSocket chat handler
     "websocket": AuthMiddlewareStack(
         URLRouter([
-            url(r"^chat/$", ChatConsumer.as_asgi()),
+            re_path(r"^chat/$", ChatConsumer.as_asgi()),
         ])
     ),
 })
