@@ -23,7 +23,7 @@ class Product(models.Model):
     Category = models.ForeignKey(SubCategory,related_name="category",on_delete=models.CASCADE)
     Date = models.CharField(max_length=200)
     img = models.ImageField(upload_to='product_images')
-    Phone = models.CharField(max_length=120)
+    Phone = models.CharField(max_length=1200)
     User =  models.ForeignKey(User,related_name="user",on_delete=models.CASCADE)
 
 
