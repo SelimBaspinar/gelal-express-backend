@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-$#c8ht$d*l_90+bbud!-5bvpdmm56f_c!ya1#@ll@=o^l)i5$q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://gelaldeneme.netlify.app/','127.0.0.1:8000']
+ALLOWED_HOSTS = ['https://gelaldeneme.netlify.app/','127.0.0.1:8000','127.0.0.1']
 
 # Application definition
 
@@ -139,8 +139,7 @@ CORS_ORIGIN_WHITELIST = ["https://gelaldeneme.netlify.app"
 ]
 django_heroku.settings(locals())
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE='storages.backends.s3boto3.S3Boto3Storage'
 AWS_ACCESS_KEY_ID = 'AKIAZR2EILJOSFBIR6UK'
