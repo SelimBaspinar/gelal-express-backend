@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-$#c8ht$d*l_90+bbud!-5bvpdmm56f_c!ya1#@ll@=o^l)i5$q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://gelaldeneme.netlify.app','gelaldeneme.netlify.app','127.0.0.1','.herokuapp.com']
+ALLOWED_HOSTS = ['https://gelaldeneme.netlify.app/','127.0.0.1:8000']
 
 # Application definition
 
@@ -58,7 +58,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'backend.urls'
 
@@ -132,6 +132,8 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+CORS_ORIGIN_WHITELIST = ["https://gelaldeneme.netlify.app"
+]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 django_heroku.settings(locals())
 
