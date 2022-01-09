@@ -10,26 +10,15 @@ https://docs.djangoproject.com/en/4.0/howto/deployment/asgi/
 import os
 
 from channels.auth import AuthMiddlewareStack
-from channels.routing import ProtocolTypeRouter, URLRouter
+from channels.routing import get_default_application
 from django.conf.urls import url
+import django
 from django.core.asgi import get_asgi_application
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "backend.settings")
-# Initialize Django ASGI application early to ensure the AppRegistry
-# is populated before importing code that may import ORM models.
-django_asgi_app = get_asgi_application()
+django.setup()
+application=get_default_application()
 
-from chat.consumers import ChatConsumer
 
-application = ProtocolTypeRouter({
-    # Django's ASGI application to handle traditional HTTP requests
-    "http": django_asgi_app,
 
-    # WebSocket chat handler
-    "websocket": AuthMiddlewareStack(
-        URLRouter([
-            url(r"^chat/$", ChatConsumer.as_asgi()),
-        ])
-    ),
-})
 
