@@ -132,7 +132,7 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ORIGIN_WHITELIST = ["https://gelaldeneme.netlify.app","https://127.0.0.1",'https://gelal-express-backend.herokuapp.com/'
+CORS_ORIGIN_WHITELIST = ["https://gelaldeneme.netlify.app","https://127.0.0.1"
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 django_heroku.settings(locals())
